@@ -37,7 +37,7 @@ function App() {
         const itemTitleCopy = [...itemTitle];
         itemTitleCopy[0] = "여자 옷";
         setItemTitle(itemTitleCopy);
-      }}> 여자옷으로 변경하기 </button>
+      }}> 여자옷으로 변경하기! </button>
       <button onClick={()=>{sortItems(itemTitle)}}>정렬하기</button>
       {
         itemTitle.map((titleElement, index)=>{
