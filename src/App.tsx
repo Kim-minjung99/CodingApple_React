@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 export let Context = createContext([""]);
 
 // lazy loading
+
 const DetailList = lazy(()=>import ('./pages/DetailList'));
 
 function App() {
