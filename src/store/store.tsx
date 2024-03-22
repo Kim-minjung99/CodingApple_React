@@ -17,21 +17,20 @@ const cart = createSlice({
     ],
     reducers : {
         countUp(state, action) {
-            console.log("reduxstate",state, action); 
-            const checkItme = state.find((element)=>{
-                if(element.id === action.payload){
-                    return element;
-                }
-            })
-            // checkItme?.count = checkItme?.count + 1;
+            let countState = state.findIndex((a)=>{ return a.id === action.payload });
+            state[countState].count++;
+            console.log("count", state[countState].count);
         },
+        // 장바구니에 아이템 추가
         addCartItem(state, action){
-
+            console.log("reducerState", state);
+            const copyState = [...state, ...action.payload];
+            state = copyState;
         } 
     }
 })
 
-export let {countUp} = cart.actions;
+export let {countUp, addCartItem} = cart.actions;
 
 export default configureStore({
     reducer: { 
